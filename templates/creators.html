@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/content_style.css' %}">
+
+    <title> Reviews </title>
+</head>
+<body style="background-image: linear-gradient(rgb(43, 165, 202), rgb(196, 238, 248)); ">
+    
+{% include 'navbar.html' %}
+
+<!-- add new topic form -->
+<br>
+<button class="btn btn-primary float-right hide-me" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Be Creator
+</button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="contact_content">
+                        <div class="contact_title">Be creator yourself</div>
+                        <div class="contact_text">
+                            <p> A new topic for which you think content should be available, so that other people can get some idea about it.</p>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-lg-6">
+                    <div class="contact_form_container">
+                        <form action="../content/creators" id="contact_form" class="contact_form" method="POST"> {% csrf_token %}
+                            <div style="margin-bottom: 18px"><input type="text" class="contact_input contact_input_name inpt" placeholder="Username to be displayed" required="required" name="title"><div class="input_border"></div></div>
+                            <!-- <div class="row">
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div><input type="text" class="contact_input contact_input_email inpt" placeholder="Your E-mail" required="required"><div class="input_border"></div></div>
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div><input type="text" class="contact_input contact_input_subject inpt" placeholder="Subject" required="required"><div class="input_border"></div></div>
+                                </div>
+                            </div> -->
+                            <div><textarea class="contact_textarea contact_input inpt" placeholder="Desciption of what are you gonna create.." required="required" name="description"></textarea><div class="input_border" style="bottom:3px"></div></div>
+                            <button class="contact_button">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- creators folliwing list starts -->
+<hr>
+<div class="container-fluid">
+        <div style="padding:20px;"><h2 class="text-center"> Creators you are following </h2></div>
+        <div class="row">
+            {% for creator in following_creators_list1 %}
+            <div class="col-md-3 col-sm-6">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ creator.title }}</h5>
+                        <p class="card-text text-center">{{ creator.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center"><button class="btn btn-primary hide-me text-center" type="button" data-toggle="collapse" data-target="#moretopics" aria-expanded="false" aria-controls="collapseExample">Load More</button></div>
+        <div class="collapse" id="moretopics">
+            <div class="row">
+            {% for creator in following_creators_list2 %}
+            <div class="col-md-3 col-sm-6">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title text-center">{{ creator.title }}</h5>
+                    <p class="card-text text-center">{{ creator.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+</div>
+<!-- creators folliwing list ends -->
+
+<!-- all topics list starts -->
+<hr>
+<div class="container-fluid">
+        <div style="padding:20px;"><h2 class="text-center"> Recommended creators </h2></div>
+        <div class="row">
+            {% for creator in all_creators1 %}
+            <div class="col-md-3 col-sm-6">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ creator.title }}</h5>
+                        <p class="card-text text-center"> {{ creator.description }} </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center"><button class="btn btn-primary hide-me text-center" type="button" data-toggle="collapse" data-target="#nextlistoftopics" aria-expanded="false" aria-controls="collapseExample">Load More</button></div>
+        <div class="collapse" id="nextlistoftopics">
+            <div class="row">
+            {% for creator in all_creators2 %}
+            <div class="col-md-3 col-sm-6">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title text-center" > {{ creator.title }} </h5>
+                    <p class="card-text text-center"> {{ creator.description }} </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+</div>
+
+<!-- all topics list ends -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

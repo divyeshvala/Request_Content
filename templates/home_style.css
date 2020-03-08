@@ -1,0 +1,24 @@
+.jumbotron {
+            background-color:rgb(173, 218, 226);
+        }
+
+        .navbar_and_slider {
+            background-color: rgb(215, 242, 248);
+        }
+
+        .nav-btn  {
+            color: rgb(1, 33, 39);
+            box-shadow: black;
+        }
+        .nav-btn:hover {
+            background-color: rgb(4, 53, 61); /* Green */
+            color: white;
+        }
+
+        .topic-btn {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .topics-container {
+            background-color: rgb(215, 242, 248);
+        }

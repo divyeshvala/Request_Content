@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(237, 247, 250) , rgb(217, 231, 235));
+        }
+
+        .navbar_and_slider {
+            background-image: linear-gradient(to right, rgb(237, 247, 250) , rgb(217, 231, 235));
+        }
+
+        .nav-btn  {
+            color: rgb(1, 33, 39);
+        }
+        .nav-btn:hover {
+            background-color: rgb(4, 53, 61); /* Green */
+            color: white;
+        }
+    </style>
+    <title> Reviews </title>
+</head>
+<body>
+    
+    {% include 'navbar.html' %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- <br><br><br>
+            <div class="w3-container w3-green">
+                <h3>Rating : {{ avg_rating }}</h3>
+            </div>
+            <h3>  </h3>
+            <br><br><br><br> -->
+            <br><br>
+            <div class="w3-container w3-blue">
+                <h3 class="text-center"> Add New Idea </h3>
+            </div>
+    `        <form class="w3-container w3-card-4" action="submit_idea" method="POST"> {% csrf_token %}
+                <!-- <h3> Rate the product </h3>
+                <select class="w3-select" name="stars">
+                  <option value="" disabled selected>Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <br><br> -->
+                <label>Title</label>
+                <p><input class="w3-input" type="text" placeholder="max 100 chars" name="title"></p>
+                <label>Description</label>
+                <p><textarea class="w3-input" type="text" name="description" placeholder="Description of the idea.." > </textarea> </p>
+                <p><button class="w3-btn w3-teal">Submit</button></p>
+              </form>
+            <div> 
+                {% for message in messages %}
+                    <h3 style="color: darkred;"> {{ message }} </h3>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-8">
+            {% for idea in my_ideas %}
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center w3-text-blue"> {{ idea.idea_title }} </h4>
+                            <p class="text-center"> {{ idea.idea_description }} </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

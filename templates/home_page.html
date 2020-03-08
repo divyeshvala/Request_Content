@@ -1,0 +1,251 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+
+    <title>Request Content</title>
+</head>
+
+<body class="bg-light">
+
+<div class="navbar_and_slider">   
+
+    <!-- navbar starts -->
+    {% include "navbar.html" %}    
+    <!-- navbar ends -->
+
+    <!-- slider starts -->
+    <br>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row px-4 py-3 text-center">
+                <div class="col-md-6 col-sm-6">
+                    <div class="jumbotron carousel-1">
+                        <h1 class=""> Request Content </h1>
+                        <p> Request content from various youtube creaters or upvote already requested topics, so that they can make videos of that content. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="jumbotron carousel-2">
+                        <h1 > Follow Topics </h1>
+                        <p> Follow topics that you want to learn about to get more content on those topics. Videos will be suggested to you once they ae available. </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row px-4 py-3 text-center">
+                <div class="col-md-6 col-sm-6 ">
+                    <div class="jumbotron carousel-3">
+                        <h1 > Rate Top Videos </h1>
+                        <p> Rate and review videos so that creators get feedback and other users get idea of what to look for. And this is random text and more random. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 ">
+                    <div class="jumbotron carousel-4">
+                        <h1 > Rate Top Creators </h1>
+                        <p> Rate top creators to to make everyone else's life easier. And this is random text and more random. And this is random text and more random </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row px-4 py-3 text-center">
+                <div class="col-md-12 col-sm-12">
+                    <div class="jumbotron carousel-5" onclick="location.href='ideas/';">
+                        <h1 > Share Your Ideas </h1>
+                        <p> Share your idea about what changes you wnat to see or what new stuff that you think should be available. And this is random text and more random. And this is random text and more random. </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+        <br>
+    </div>
+    <!-- slider ends  -->
+
+</div>   
+
+<div class="container-fluid">
+    <div class="row text-center p-5">
+        <div class="col-12 welcome">
+            <h4>What would yu like to learn today?</h4><br>
+            <h4>For what do you thonk content should be available?</h4>
+            
+            <form class="form-inline my-2 my-lg-0" style="text-align: center; float:none;display: inline-block; margin-left:auto !important; margin-right:auto !important;">
+                <input class="form-control mr-sm-2" size="35" type="search" placeholder="Enter content type or topic name" aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0 text-white" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+ <!-- creator list starts here -->
+<div class="team">
+    <div class="container">
+
+        <div id="creator" class="carousel slide " data-ride="carousel">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_subtitle">Meet the creators</div>
+                    <div class="section_title"><h2>Creators in Trend</h2></div>
+                </div>
+            </div>
+            <ul class="carousel-indicators">
+            <li data-target="#creator" data-slide-to="0" class="active"></li>
+            <li data-target="#creator" data-slide-to="1"></li>
+            </ul>
+    
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row team_row">
+                    {% for creator in first_four_creators %}
+                    <div class="col-xl-3 col-md-6 team_col">
+                        <div class="team_item d-flex flex-column align-items-center justify-content-start text-center" >
+                            <img src="{% static 'img/why_1.jpg' %}" width="100px" height="100px" class="rounded-circle float-right" alt="">
+                            <div class="team_content">
+                                <div class="team_title"><a href="#"> {{ creator }} </a></div>
+                                <div class="team_text">
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="row team_row">
+                    {% for creator in next_four_creators %}
+                    <div class="col-xl-3 col-md-6 team_col">
+                        <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                            <img src="{% static 'img/why_1.jpg' %}" width="100px" height="100px" class="rounded-circle float-right" alt="">
+                            <div class="team_content">
+                                <div class="team_title"><a href="#"> {{ creator }} </a></div>
+                                <div class="team_text">
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#creator" data-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark"></span>
+            </a>
+            <a class="carousel-control-next" href="#creator" data-slide="next">
+            <span class="carousel-control-next-icon bg-dark"></span>
+            </a>
+            <br>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- creator list ends here -->
+
+
+<!-- topics starts here -->
+<br>
+<div class="container-fluid topics-container">
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1>Topics in Trend</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <br>
+    <div class="row text-center">
+        {% for topic in topics %}
+        <div class="col-md-3 col-sm-6">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-body" onclick="location.href='topic_details';">
+                    <h5 class="card-title text-center"> {{ topic}} </h5>
+                    <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+<!-- topics ends here -->
+
+
+<hr class="my-4">
+<!--- Footer -->
+<footer class="background-balck">
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-4">
+				<img src="img/w3newbie.png">
+				<hr class="light">
+				<p>555-555-555</p>
+				<p>email@myemail.com</p>
+				<p>100 street name</p>
+			</div>
+			<div class="col-md-4">
+				<hr class="light">
+				<h5> Our Hours</h5>
+				<hr class="light">
+				<p>Monday: 9am-5pm</p>
+				<p>Saturday: 10am-4pm</p>
+				<p>Sunday: closed</p>
+			</div>
+			<div class="col-md-4">
+				<hr class="light">
+				<h5> Locations </h5>
+				<hr class="light">
+				<p>city1, 767677</p>
+				<p>city2, 424234</p>
+				<p>city3, 723676</p>
+			</div>
+			<div class="col-12">
+				<hr class="light">
+				<h5> &copy; RequestContent.com </h5>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--- Footer ends here -->
+
+    <!-- for darkmode -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js"></script>
+    <script>
+    new Darkmode().showWidget();
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+</body>
+</html>
+

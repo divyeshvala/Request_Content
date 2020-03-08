@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <nav class="navbar rounded">
+            <a class="navbar-brand" href="#">
+            <img src="https://cdn.vox-cdn.com/thumbor/0n6dqQfk9MuOBSiM39Pog2Bw39Y=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19341372/microsoftedgenewlogo.jpg" width="35" height="35" alt="Logo">
+            </a>
+        </nav>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active px-2">
+                    <a class="btn nav-btn " href="../">HOME</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="btn nav-btn " href="../content/topics">TOPICS</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="btn nav-btn " href="../content/creators">CREATORS</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="btn nav-btn " href="../content/ideas">IDEAS</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item px-2"> 
+                    <a class="btn nav-btn" href="#"> HELLO, {{ user.first_name }} </a>
+                </li>
+                <li class="nav-item px-2"> 
+                    <a class="btn nav-btn" href="../users/logout"> LOG OUT </a>
+                </li>
+                {% else %}
+                <li class="nav-item px-2"> 
+                    <a class="btn nav-btn" href="../users/login"> LOGIN </a>
+                </li>
+                {% endif %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0 text-white" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>  
