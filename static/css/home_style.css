@@ -1,0 +1,110 @@
+body {
+    background-image: linear-gradient(to right, rgb(237, 247, 250) , rgb(217, 231, 235));
+}
+
+.jumbotron {
+    background-color:rgb(173, 218, 226); 
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.navbar_and_slider {
+    background-image: url('../img/creators.jpg');
+}
+
+.nav-btn  {
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-btn:hover {
+    background-color: rgb(4, 26, 61);
+    color: white;
+}
+
+.topic-btn {
+    background-image: linear-gradient(to right, rgb(255, 255, 255) , rgb(255, 255, 255));
+}
+
+/* .topics-container {
+    background-image: linear-gradient( rgb(255, 255, 255), rgb(255, 255, 255)); 
+}  */
+
+.padding {
+    padding-bottom: 2rem;
+}
+
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+}
+
+.team
+{
+	width: 100%;
+	background: rgb(247, 153, 153);
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.team_row
+{
+	margin-top: 50px;
+}
+.team_item
+{
+	width: 100%;
+	padding-bottom: 48px;
+	
+}
+.team_image
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.team_image img
+{
+	max-width: 100%;
+}
+.team_content
+{
+	width: 100%;
+}
+.team_title
+{
+	margin-top: 37px;
+}
+.team_title a
+{
+	font-family: 'Oswald', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	color: rgba(24,24,24,1);
+	line-height: 1.2;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.team_title a:hover
+{
+	color: rgba(24,24,24,0.7);
+}
+.team_text
+{
+	margin-top: 22px;
+}
+
+footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 2rem;
+}

@@ -1,0 +1,123 @@
+        body {
+            background-image: linear-gradient(rgb(252, 110, 110), rgb(250, 198, 189));
+        }
+
+        .navbar {
+            background-color: rgb(250, 253, 253);
+        }
+
+        .nav-btn  {
+            color: rgb(1, 33, 39);
+        }
+        .nav-btn:hover {
+            background-color: rgb(4, 53, 61); /* Green */
+            color: white;
+        }
+
+        .contact
+        {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-image: url("../img/testimonials.jpg") ;
+        }
+        .contact_title
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: #ffffff;
+            padding-top: 30px;
+        }
+
+        .contact_text {
+            color: #FFFFFF;
+        }
+
+        .contact_form_container
+        {
+            width: 100%;
+        }
+        .contact_input
+        {
+            width: 100%;
+            height: 53px;
+            background: #f2f5f6;
+            border: none;
+            outline: none;
+            padding-left: 20px;
+        }
+        .contact_textarea
+        {
+            height: 163px;
+            padding-top: 12px;
+        }
+        .contact_input::-webkit-input-placeholder
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: #88889d !important;
+        }
+        .contact_input:-moz-placeholder
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: #88889d !important;
+        }
+        .contact_input::-moz-placeholder
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: #88889d !important;
+        } 
+        .contact_input:-ms-input-placeholder
+        { 
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: #88889d !important;
+        }
+        .contact_input::input-placeholder
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            color: #88889d !important;
+        }
+        .contact_form .input_border
+        {
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #181818;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+        .contact_button
+        {
+            width: 160px;
+            height: 50px;
+            background: #31385d;
+            font-family: 'Oswald', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-left: 20px;
+        }
+
+        .hide-me[aria-expanded="true"] {display: none;}
+
