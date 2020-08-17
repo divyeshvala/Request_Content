@@ -6,7 +6,7 @@ There is a system of upvoting content and trending section as well.
 
 ## Table of Contents
 * [Main Features](#main-features).
-* [Frameworks](#frameworks).
+* [Techologies Used](#technologies-used).
 * [Contributors](#contributors).
 
 ### Main Features
