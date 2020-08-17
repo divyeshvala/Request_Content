@@ -3,7 +3,6 @@
 ## Introduction
 It is a web project to request content from content creators. Sometimes we want to learn something but we can’t find enough material for it. So through this website we can let them know we are interested in this topics.   
 There is a system of upvoting content and trending section as well. 
-It was built using HTML, CSS, and JavaScript as a frontend and Django as a backend. 
 
 ## Table of Contents
 * [Main Features](#main-features).
